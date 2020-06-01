@@ -18,10 +18,10 @@ type
     Label2: TLabel;
     MainMenu1: TMainMenu;
     MenuItem1: TMenuItem;
-    MenuItem4: TMenuItem;
-    MenuItem5: TMenuItem;
-    MenuItem6: TMenuItem;
-    MenuItem7: TMenuItem;
+    Help: TMenuItem;
+    SaveInp: TMenuItem;
+    SaveReport: TMenuItem;
+    Open: TMenuItem;
     Num1: TEdit;
     Num2: TEdit;
     OpenDialog1: TOpenDialog;
@@ -32,17 +32,17 @@ type
     procedure FormCreate(Sender: TObject);
     procedure Label1Click(Sender: TObject);
     procedure Memo1Change(Sender: TObject);
-    procedure MenuItem4Click(Sender: TObject);
-    procedure MenuItem5Click(Sender: TObject);
-    procedure MenuItem6Click(Sender: TObject);
-    procedure MenuItem7Click(Sender: TObject);
+    procedure HelpClick(Sender: TObject);
+    procedure SaveInpClick(Sender: TObject);
+    procedure SaveReportClick(Sender: TObject);
+    procedure OpenClick(Sender: TObject);
     procedure Num1Change(Sender: TObject);
     procedure Num1Enter(Sender: TObject);
     procedure Num1Exit(Sender: TObject);
     procedure Num2Change(Sender: TObject);
     procedure Num2Enter(Sender: TObject);
     procedure Num2Exit(Sender: TObject);
-    procedure Save();
+    procedure SaveReport();
 
   private
 
@@ -148,13 +148,13 @@ begin
 
 end;
 
-procedure TForm1.MenuItem4Click(Sender: TObject);
+procedure TForm1.HelpClick(Sender: TObject);
 begin
    ShowMessage('Скубиев.Н | ИВТ-19-2 '+#13#10+'Задача №2 из задачника');
 
 end;
 
-procedure TForm1.MenuItem5Click(Sender: TObject);
+procedure TForm1.SaveInpClick(Sender: TObject);
  var
    FileN,s,s1: string;
 
@@ -171,15 +171,15 @@ procedure TForm1.MenuItem5Click(Sender: TObject);
 
  end;
 
-procedure TForm1.MenuItem6Click(Sender: TObject);
+procedure TForm1.SaveReportClick(Sender: TObject);
  begin
-     Save();
+     SaveReport();
  end;
 
 
 
 
-procedure TForm1.MenuItem7Click(Sender: TObject);
+procedure TForm1.OpenClick(Sender: TObject);
  var
    FileN: string; x,y : real;
  begin

@@ -159,22 +159,22 @@ object Form1: TForm1
     left = 32
     object MenuItem1: TMenuItem
       Caption = 'Файл'
-      object MenuItem7: TMenuItem
+      object Open: TMenuItem
         Caption = 'Открыть'
-        OnClick = MenuItem7Click
+        OnClick = OpenClick
       end
-      object MenuItem5: TMenuItem
+      object SaveInp: TMenuItem
         Caption = 'Сохранить'
-        OnClick = MenuItem5Click
+        OnClick = SaveInpClick
       end
-      object MenuItem6: TMenuItem
+      object SaveReport: TMenuItem
         Caption = 'Сохранить отчёт'
-        OnClick = MenuItem6Click
+        OnClick = SaveReportClick
       end
     end
-    object MenuItem4: TMenuItem
+    object Help: TMenuItem
       Caption = 'Справка'
-      OnClick = MenuItem4Click
+      OnClick = HelpClick
     end
   end
   object OpenDialog1: TOpenDialog
