@@ -43,7 +43,7 @@ type
     procedure Num2Enter(Sender: TObject);
     procedure Num2Exit(Sender: TObject);
     procedure Save();
-    procedure DataFromForm();
+
   private
 
   public
@@ -52,7 +52,6 @@ type
 
 var
   Form1: TForm1;
-  error: boolean;
   n1, n2, res: real;
 
   calculations: array [1..128] of Calculation;
@@ -72,31 +71,13 @@ begin
   last_ind := 0;
 end;
 
-procedure TForm1.DataFromForm();
-begin
-  if TryStrToFloat(Num1.Text, n1) = false then
-    begin
-       error:= true;
-       Num1.Color:= clGradientActiveCaption;
-       ShowMessage('Неправильно введено первое число');
-       exit;
-    end;
 
-  if TryStrToFloat(Num2.Text, n2) = false then
-      begin
-         error:= true;
-         ShowMessage('Неправильно введено второе число');
-         exit;
-      end;
-
-
-end;
 
 procedure TForm1.Save();
 var
   f:text;
   i, k: integer;
-  FileN: string; x,y : real;
+  FileN: string;
  begin
  if SaveDialog2.Execute then
  begin
@@ -119,14 +100,13 @@ end;
 
 end;
 
+procedure TForm1.AddClick(Sender: TObject);                                            
 
-procedure TForm1.AddClick(Sender: TObject);
 var
   last_calc : Calculation;
 begin
-  error:= false;
-  DataFromForm();
-  if error = false then
+
+  if TryStrToFloat (Num1.Text, n1) and TryStrToFloat (Num2.Text, n2) = true then
   begin
 
   res:= calc_result(n1,n2);
@@ -143,12 +123,17 @@ begin
 
   StringGrid1.Cells[1, last_ind]:= FloatToStr(n1);
   StringGrid1.Cells[2, last_ind]:= FloatToStr(n2);
-  StringGrid1.Cells[3, last_ind]:= FloatToStr(res);
+  StringGrid1.Cells[3, last_ind]:= FloatToStr(res)
+
+
+
+  end
+  else
+  ShowMessage('Неккоректный ввод чисел');
   end;
 
 
 
-end;
 
 
 procedure TForm1.Label1Click(Sender: TObject);
@@ -172,7 +157,7 @@ end;
 procedure TForm1.MenuItem5Click(Sender: TObject);
  var
    FileN,s,s1: string;
-   x: real;
+
 
  begin
    if SaveDialog1.Execute then
@@ -198,20 +183,37 @@ procedure TForm1.MenuItem7Click(Sender: TObject);
  var
    FileN: string; x,y : real;
  begin
- if OpenDialog1.Execute then
- begin
-    error:= false;
-    FileN := OpenDialog1.FileName;
-    OpenInput(FileN,x,y,error);
-    if error = true then ShowMessage ('Невозможно открыть файл')
-    else
+    if OpenDialog1.Execute then
     begin
-       Num1.Text:=FloatToStr(x);
-       Num2.Text:=FloatToStr(y);
+
+      FileN := OpenDialog1.FileName;
+
+      try
+
+      OpenInput(FileN,x,y);
+      Num1.Text:=FloatToStr(x);
+      Num2.Text:=FloatToStr(y);
+
+      except
+
+      ShowMessage('Не удалось открыть файл');
+      exit;
+
+      end;
     end;
 
  end;
- end;
+
+
+
+
+
+
+
+
+
+
+
 
 procedure TForm1.Num1Change(Sender: TObject);
 begin

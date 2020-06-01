@@ -12,11 +12,17 @@ type
     num1, num2: real;
     result: real;
 
+
   end;
 
-procedure OpenInput (filepath:string ; var x:real; var y : real; var error: boolean);
+procedure OpenInput (filepath:string ; var x:real; var y : real);
 procedure SaveInput (filepath:string ; x:string; y :string);
 function calc_result( x, y: real): real;
+
+
+
+
+
 
 implementation
 
@@ -24,12 +30,12 @@ implementation
 
 function calc_result(x,y: real): real ;
 begin
-    result:=(abs(x)-abs(y))/(1+abs(x*y));
+   result:=(abs(x)-abs(y))/(1+abs(x*y));
 
 
 end;
 
-procedure OpenInput (filepath:string ; var x:real; var y : real; var error: boolean);
+procedure OpenInput (filepath:string ; var x:real; var y : real);
 var s,s1 : string;
   f:text;
 begin
@@ -38,12 +44,8 @@ begin
    Reset(f);
    Readln(f,s);
    Readln(f,s1);
-   if TryStrToFloat(s,x) or TryStrToFloat(s,y) = false then error:= true
-   else
-   begin
-      x:=StrToFloat(s);
-      y:=StrToFloat(s1);
-   end;
+   x:=StrToFloat(s);
+   y:=StrToFloat(s1);
    closeFile(f);
 end;
 
