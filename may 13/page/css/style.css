@@ -13,10 +13,10 @@
 /* дополнительный цвет !!! */
   --secondary: #abcc88;
 /* дополнительный цвет. светлый вариант !!! */
-  --secondary-light: #ffeeee;
+  --secondary-light: #101721;
   
 /* основной размер шрифта !!! */
-  --size: 15px;
+  --size: 14px;
   
 /*   остальные размеры */
   --size2: 1.15em;
@@ -27,10 +27,12 @@
 
 /* Для всей страницы !!! */
 body{
-  font-family: Courier, serif;
+  font-family: Segoe UI , sans-serif;
   font-size: var(--size);
   color: var(--text);
-  background: #090e15;     /* !!! */
+  background: #090e15;
+ /* background: linear-gradient(to top, #090e15, #121d2b); */
+      /* !!! */
 }
 
 
@@ -66,13 +68,14 @@ p{
 
 /* номер телефона !!! */
 #header-tel-number{
-  font-size:1.9em;
+  font-size:1.6em;
+  
   
 }
 
 /* подпись (ссылка) к номеру телефона !!! */
 #header-tel-label{
-  font-size: 1em;
+  font-size: 0.9em;
 }
 
 
@@ -83,12 +86,14 @@ p{
   background: var(--secondary-light);  /* --- */
   justify-content: flex-start;
   height: 50px;
-  font-family: Arial; serif;
+  font-family: Helvetica, serif;
   align-items: center;
   
-  font-size: var(--size3);            /* --- */
+  font-size: 20px;            /* --- */
   
-  margin-bottom: 30px;  
+  margin-bottom: 50px;
+
+  border-radius: 10px 10px;  
   
   background: #101721;  /* !!! */
 }
@@ -107,7 +112,9 @@ p{
 }
 
 .main-nav li a:hover{
-  background: var(--primary);        /* --- */
+  background: linear-gradient(to bottom right, #46c1ae, #3a68a8);
+  background: #46c1ae;
+  border-radius: 2px 2px;         /* --- */
   color: white;                      /* !!! */
 }
 
@@ -121,6 +128,7 @@ p{
 
 .main-section{
   margin-left: 15px;
+  border-radius: 50px 50px; 
   background: #00000012;            /* !!! */
 }
 
@@ -185,6 +193,6 @@ h1,h2,h3{
 
   font-family: Arial;
 
-  color: #cacaca;
+  color: #cecece;
  
 }
