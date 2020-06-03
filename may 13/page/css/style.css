@@ -112,7 +112,7 @@ p{
 }
 
 .main-nav li a:hover{
-  background: linear-gradient(to bottom right, #46c1ae, #3a68a8);
+  background: linear-gradient(to bottom right, #46c1ae, #efefef);
   background: #46c1ae;
   border-radius: 2px 2px;         /* --- */
   color: white;                      /* !!! */
@@ -191,8 +191,12 @@ footer{
 h1,h2,h3{
   font-size: 25px;
 
-  font-family: Arial;
+  font-family: Segoe UI , sans-serif;
+  
+  background: #1017216e;
 
-  color: #cecece;
+  border-radius: 5px 5px;
+
+  color:  #c5d3d1;
  
 }
