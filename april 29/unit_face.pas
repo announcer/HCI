@@ -42,7 +42,7 @@ type
     procedure Num2Change(Sender: TObject);
     procedure Num2Enter(Sender: TObject);
     procedure Num2Exit(Sender: TObject);
-    procedure SaveReport();
+    procedure SaveRep();
 
   private
 
@@ -73,7 +73,7 @@ end;
 
 
 
-procedure TForm1.Save();
+procedure TForm1.SaveRep();
 var
   f:text;
   i, k: integer;
@@ -156,16 +156,16 @@ end;
 
 procedure TForm1.SaveInpClick(Sender: TObject);
  var
-   FileN,s,s1: string;
-
+   FileN: string;
+   a,b : real;
 
  begin
    if SaveDialog1.Execute then
    begin
+     a:= n1;
+     b:= n2;
      FileN := SaveDialog1.FileName;
-     s:=FloatToStr(n1);
-     s1:=FloatToStr(n2);
-     SaveInput(FileN,s,s1);
+     SaveInput(FileN,a,b);
    end;
 
 
@@ -173,7 +173,7 @@ procedure TForm1.SaveInpClick(Sender: TObject);
 
 procedure TForm1.SaveReportClick(Sender: TObject);
  begin
-     SaveReport();
+     SaveRep();
  end;
 
 
