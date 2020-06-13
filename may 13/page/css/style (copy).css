@@ -11,22 +11,22 @@
    */
   
 /*   основной цвет !!! */
-  --primary: #101721;
+  --primary: #006675;
 
 /* освновной цвет текста !!! */
-  --text: #dacfcf;
+  --text: #000;
 
 /* дополнительный цвет !!! */
-  --secondary: #00000012;
+  --secondary: #f0fdff;
 /* долполнительный цвет. светлый вариант !!! */
-  --secondary-light: #090e15;
+  --secondary-light: #fff;
   
 /*   Акцидентный цвет и цвет шрифта на его фоне */
-  --accent: #46c1ae;
-  --accent-text: white;
+  --accent: #377500;
+  --accent-text: #ffffff;
   
-  --accent2: #379889;  /* используется только для подсветки кнопки акцидентного цвета при наведении */
-  --accent2-text: #efefef;
+  --accent2: #244d00;  /* используется только для подсветки кнопки акцидентного цвета при наведении */
+  --accent2-text: #ffffff;
   
 /* основной размер шрифта !!! */
   --size: 16px;
@@ -36,7 +36,7 @@
   в относительных еденицах. За 1 принят размер текста в body.
   
   */
-  --size2: 1.15em;
+  --size2: 1.25em;
   --size3: 1.38em;
   --size4: 1.9em;
 }
@@ -44,9 +44,9 @@
 
 /* Для всей страницы !!! */
 body{
-  font-family: Segoe UI , sans-serif;    /* Основной и запасной шрифт */
+  font-family: Helvetica, Times;    /* Основной и запасной шрифт */
   /* Здесь задётся размер шрифта с помошью переменной. Переменная оборачивается в var*/
-  font-weight: 400;
+  font-weight: 800;
   font-size: var(--size);    
 /*   цвет шрифта всей страницы */
   color: var(--text);
@@ -55,13 +55,14 @@ body{
 }
 
 
+
+
 /* Настройка внешнего вида списков, ссылок и отступа для параграфа */
-ul li{
+li{
   list-style-type: none;}
 
 
-
-.row ul li{
+.row li{
   list-style-type: square;}
 
 
@@ -126,30 +127,26 @@ header{                       /* !!! */
 
 /* Навигация (строка меню) */
 .main-nav{
- 
   background: var(--primary);  /* !!! */
-  font-size: var(--size2);
-  margin-top: 50px;             /* --- */
-  margin-bottom: 30px;
-  font-family: Helvetica, serif;
-   
+  font-size: var(--size2);             /* --- */
+  margin-bottom: 30px;  
 }
 
 
 /* Текст элемента меню */
 .main-nav li a{
   text-decoration: none;
-  color: #e9eaeb;                /* ---- */
+  color: white;                 /* ---- */
+  
   height: 100%;
-  padding: 18px;
+  padding: 29px;
 }
 
 
 /* Текст элемента меню при наведении*/
 .main-nav li a:hover{
   background: var(--accent);        /* --- */
-  color: var(--accent-text);
-  border-radius: 2px;        /* --- */
+  color: var(--accent-text);        /* --- */
 }
 
 
@@ -194,12 +191,12 @@ code{
 .click-me{
   background: var(--accent);      /* --- */
   color: var(--accent-text);
-  border-radius: 6px;
+  border-radius: 7px;
   padding: 8px 20px;
   
   text-transform: uppercase;
   letter-spacing: 1px;
-  font-weight: 600;             /* --- */
+  font-weight: 800;             /* --- */
  
 }
 
@@ -207,7 +204,6 @@ code{
 .click-me:hover{
   background: var(--accent2);      /* --- */
   color: var(--accent2-text);
-  
 }
 
 
@@ -216,8 +212,7 @@ code{
 
 /* Нижняя часть сайта, "подвал" */
 footer{
-  color: #ffffff;
-                       /* !!! */
+  color: white;                     /* !!! */
 }
 
 
@@ -225,15 +220,3 @@ html {
   scroll-behavior: smooth;
 }
 
-h1,h2,h3{
-  font-size: 23px;
-
-  font-family: Segoe UI , sans-serif;
-  
-  background: #46689708;
-
-  border-radius: 5px;
-
-  color:  #c5d3d1;
- 
-}
