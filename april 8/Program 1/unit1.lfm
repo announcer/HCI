@@ -1,0 +1,215 @@
+object Form1: TForm1
+  Left = 428
+  Height = 326
+  Top = 318
+  Width = 625
+  Caption = 'Задача 1'
+  ClientHeight = 306
+  ClientWidth = 625
+  Color = clForm
+  Constraints.MaxHeight = 326
+  Constraints.MaxWidth = 625
+  Constraints.MinHeight = 326
+  Constraints.MinWidth = 625
+  Font.CharSet = ANSI_CHARSET
+  Font.Color = clBlack
+  Font.Height = -12
+  Font.Name = 'Franklin Gothic Medium'
+  Font.Pitch = fpVariable
+  Font.Quality = fqDraft
+  Menu = MainMenu1
+  OnCreate = FormCreate
+  LCLVersion = '2.0.6.0'
+  object Num1: TEdit
+    Left = 145
+    Height = 30
+    Top = 24
+    Width = 100
+    BorderSpacing.Bottom = 55
+    BorderSpacing.Around = 55
+    Color = clSilver
+    Constraints.MaxHeight = 30
+    Constraints.MaxWidth = 100
+    Constraints.MinHeight = 30
+    Constraints.MinWidth = 100
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clBlack
+    Font.Height = -21
+    Font.Name = 'Franklin Gothic Medium Cond'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    OnChange = Num1Change
+    OnEnter = Num1Enter
+    OnExit = Num1Exit
+    ParentFont = False
+    TabOrder = 0
+    Text = '0'
+  end
+  object Num2: TEdit
+    Left = 144
+    Height = 30
+    Top = 88
+    Width = 100
+    HelpType = htKeyword
+    HelpKeyword = 'Второе число'
+    Color = clSilver
+    Constraints.MaxHeight = 30
+    Constraints.MaxWidth = 100
+    Constraints.MinHeight = 30
+    Constraints.MinWidth = 100
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clBlack
+    Font.Height = -21
+    Font.Name = 'Franklin Gothic Medium Cond'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    OnEnter = Num2Enter
+    OnExit = Num2Exit
+    ParentFont = False
+    TabOrder = 1
+    Text = '0'
+  end
+  object Label1: TLabel
+    Left = 24
+    Height = 30
+    Top = 24
+    Width = 100
+    Caption = 'Первое число'
+    Constraints.MaxHeight = 30
+    Constraints.MaxWidth = 100
+    Constraints.MinHeight = 30
+    Constraints.MinWidth = 100
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clBlack
+    Font.Height = -16
+    Font.Name = 'Franklin Gothic Medium'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    ParentColor = False
+    ParentFont = False
+  end
+  object Label2: TLabel
+    Left = 24
+    Height = 21
+    Top = 88
+    Width = 92
+    Caption = 'Второе число'
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clBlack
+    Font.Height = -16
+    Font.Name = 'Franklin Gothic Medium'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    ParentColor = False
+    ParentFont = False
+    OnClick = Label2Click
+  end
+  object Memo1: TMemo
+    Left = 264
+    Height = 288
+    Top = 8
+    Width = 352
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clBlack
+    Font.Height = -15
+    Font.Name = 'Franklin Gothic Medium'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    OnChange = Memo1Change
+    ParentFont = False
+    ReadOnly = True
+    ScrollBars = ssAutoBoth
+    TabOrder = 2
+    WantTabs = True
+  end
+  object Add: TButton
+    Left = 24
+    Height = 40
+    Top = 144
+    Width = 221
+    HelpType = htKeyword
+    Caption = 'Сложить'
+    Color = clRed
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clBlack
+    Font.Height = -16
+    Font.Name = 'Franklin Gothic Medium'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    OnClick = AddClick
+    ParentFont = False
+    TabOrder = 3
+  end
+  object Mult: TButton
+    Left = 24
+    Height = 40
+    Top = 256
+    Width = 221
+    Caption = 'Умножить'
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clBlack
+    Font.Height = -16
+    Font.Name = 'Franklin Gothic Medium'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    OnClick = MultClick
+    ParentFont = False
+    TabOrder = 4
+  end
+  object Diff: TButton
+    Left = 24
+    Height = 40
+    Top = 200
+    Width = 221
+    Caption = 'Вычесть'
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clBlack
+    Font.Height = -16
+    Font.Name = 'Franklin Gothic Medium'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    OnClick = DiffClick
+    ParentFont = False
+    TabOrder = 5
+  end
+  object MainMenu1: TMainMenu
+    left = 432
+    top = 32
+    object MenuItem1: TMenuItem
+      Caption = 'Файл'
+      object MenuItem5: TMenuItem
+        Caption = 'Открыть'
+        OnClick = MenuItem5Click
+      end
+      object MenuItem6: TMenuItem
+        Caption = 'Сохранить'
+        OnClick = MenuItem6Click
+      end
+      object MenuItem2: TMenuItem
+        Caption = 'Сохранить отчёт'
+        OnClick = MenuItem2Click
+      end
+    end
+    object MenuItem4: TMenuItem
+      Caption = 'Справка'
+      OnClick = MenuItem4Click
+    end
+  end
+  object OpenDialog1: TOpenDialog
+    Filter = 'Текстовой документ|*.txt'
+    left = 472
+    top = 32
+  end
+  object SaveDialog1: TSaveDialog
+    DefaultExt = '.txt'
+    FileName = 'InputValues'
+    left = 472
+    top = 80
+  end
+  object SaveDialog2: TSaveDialog
+    DefaultExt = '.txt'
+    FileName = 'Отчёт'
+    left = 432
+    top = 80
+  end
+end
