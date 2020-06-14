@@ -6,7 +6,7 @@ uses
   sysutils;
 
 procedure OpenInput (filepath:string ; var x:real; var y : real);
-procedure SaveInput (filepath:string ; x:string; y :string);
+procedure SaveInput (filepath:string ; x: real; y : real);
 function znak(x,y:real):real ;
 
 
@@ -35,14 +35,17 @@ begin
    closeFile(f);
 end;
 
-procedure SaveInput (filepath:string ; x:string; y :string);
+procedure SaveInput (filepath:string ; x: real; y: real);
 var
   f:text;
+  s,s1: string;
 begin
+     s:= FloatToStr(x);
+     s1:= FloatToStr(y);
      AssignFile(f,filepath);
      Rewrite(f);
-     Writeln(f,x);
-     Writeln(f,y);
+     Writeln(f,s);
+     Writeln(f,s1);
      CloseFile(f);
 end;
 

@@ -105,14 +105,15 @@ begin
 end;
 
 procedure TForm1.MenuItem5Click(Sender: TObject);
- var FileN,s,s1: string;
+ var FileN: string;
+     x,y : real;
  begin
    if SaveDialog1.Execute then
    begin
      FileN := SaveDialog1.FileName;
-     s:=Num1.Text;
-     s1:=Num2.Text;
-     SaveInput(FileN,s,s1);
+     x:= StrToFloat(Num1.Text);
+     y:= StrToFloat(Num2.Text);
+     SaveInput(FileN,x,y);
    end;
 
 
@@ -126,7 +127,8 @@ procedure TForm1.MenuItem6Click(Sender: TObject);
  end;
 
 procedure TForm1.MenuItem7Click(Sender: TObject);
- var FileN: string; x,y : real;
+ var FileN: string;
+     x,y : real;
  begin
  if OpenDialog1.Execute then
  begin
